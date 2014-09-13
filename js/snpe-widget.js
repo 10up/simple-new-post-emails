@@ -1,9 +1,11 @@
 (function($){
 	$('#snpe_send').on('change', function(e){
 		var $this = $(this),
-			checked = ! $this.prop('checked'); // store the previous state
+			checked = ! $this.prop('checked'), // store the previous state
+			spinner = $(this).siblings('.spinner');
 
-		// display spinner
+		$this.hide();
+		spinner.css( 'display', 'inline-block' );
 
 		$.ajax({
 			type: 'POST',
@@ -17,7 +19,8 @@
 					$this.prop( 'checked', checked);
 				}
 
-				// hide spinner
+				spinner.hide();
+				$this.show();
 			}
 		})
 	})
