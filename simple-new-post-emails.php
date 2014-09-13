@@ -31,6 +31,8 @@ class Simple_New_Post_Emails {
 	 * Set up hooks.
 	 */
 	public function __construct() {
+		require_once( 'inc/widget-snpe.php' );
+
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_action( 'personal_options', array( $this, 'personal_options' ) );
 		add_action( 'edit_user_profile_update', array( $this, 'personal_options_save' ) );
@@ -43,6 +45,7 @@ class Simple_New_Post_Emails {
 	 * @return null
 	 */
 	public function widgets_init() {
+		register_widget( 'SNPE_Widget' );
 	}
 
 	/**
