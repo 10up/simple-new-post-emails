@@ -87,6 +87,43 @@ class Simple_New_Post_Emails {
 	 * @return null
 	 */
 	public function publish_post( $post_id, $post ) {
+		// We've already sent an email for this before, so bail.
+		if ( 'Y' === get_post_meta( $post_id, 'snpe_sent', true ) ) {
+			return;
+		}
+
+		$sent = false;
+
+		$subject = $post->post_title;
+		$message = $post->post_content;
+
+		// Get the users who want emails
+		$users = get_users( array( 'meta_key' => 'snpe_send', 'meta_value' => 'Y' ) );
+
+		if ( empty( $users ) ) {
+			return;
+		}
+
+		$sent = $this->send_mail( $users, $subject, $message );
+
+		if ( $sent ) {
+			update_post_meta( $post_id, 'snpe_sent', 'Y' );
+		}
+	}
+
+	private function send_mail( $users, $subject, $message ) {
+		// BCC all users specified
+		$headers = array();
+
+		foreach ( (array) $users as $user ) {
+			$headers[] = 'Bcc: ' . $user->user_email;
+		}
+
+		// Plain text email, so strip those tags.
+		$subject = wp_strip_all_tags( $subject );
+		$message = wp_strip_all_tags( $message );
+
+		return wp_mail( 'noreply@10up.com', $subject, $message, $headers );
 	}
 }
 
