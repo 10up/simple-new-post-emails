@@ -14,6 +14,8 @@ class SNPE_Widget extends WP_Widget {
 			return;
 		}
 
+		wp_enqueue_script( 'snpe-widget', plugins_url( 'js/snpe-widget.js', dirname( __FILE__ ) ), array( 'jquery' ), '0.1', true );
+
 		$user = wp_get_current_user();
 
 		$title = empty( $instance['title'] ) ? 'New Post Emails' : $instance['title'];
@@ -21,13 +23,16 @@ class SNPE_Widget extends WP_Widget {
 		echo $args['before_widget'];
 		echo $args['before_title'] . $title . $args['after_title'];
 ?>
-<form name="snpe_options">
+<form name="snpe_options" class="snpe-options">
 	<p>
 		<label for="snpe_send">
 			<input name="snpe_send" type="checkbox" id="snpe_send" value="Y"<?php checked( $user->snpe_send, 'Y' ); ?> />
 			Get an email when a new post is published
 		</label>
 	</p>
+
+	<input type="hidden" name="action" value="snpe-options-save" />
+	<?php wp_nonce_field( 'snpe-options-save' ); ?>
 </form>
 <?php
 		echo $args['after_widget'];

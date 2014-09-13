@@ -35,8 +35,9 @@ class Simple_New_Post_Emails {
 
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_action( 'personal_options', array( $this, 'personal_options' ) );
-		add_action( 'edit_user_profile_update', array( $this, 'personal_options_save' ) );
-		add_action( 'personal_options_update', array( $this, 'personal_options_save' ) );
+		add_action( 'edit_user_profile_update', array( $this, 'option_save' ) );
+		add_action( 'personal_options_update', array( $this, 'option_save' ) );
+		add_action( 'wp_ajax_snpe-options-save', array( $this, 'ajax_option_save' ) );
 		add_action( 'publish_post', array( $this, 'publish_post' ), 10, 2 );
 	}
 
@@ -70,18 +71,34 @@ class Simple_New_Post_Emails {
 	/**
 	 * Save our custom profile option.
 	 * @param  int $user_id User ID
-	 * @return null
+	 * @return bool         Whether or not the option was successfully saved.
 	 */
-	public function personal_options_save( $user_id ) {
+	public function option_save( $user_id ) {
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {
-			return;
+			return false;
 		}
 
 		if ( isset( $_POST['snpe_send'] ) && 'Y' === $_POST['snpe_send'] ) {
-			update_usermeta( $user_id, 'snpe_send', 'Y' );
+			return update_usermeta( $user_id, 'snpe_send', 'Y' );
 		} else {
-			delete_usermeta( $user_id, 'snpe_send' );
+			return delete_usermeta( $user_id, 'snpe_send' );
 		}
+	}
+
+	/**
+	 * Save our profile option on Ajax.
+	 * @return null
+	 */
+	public function ajax_option_save() {
+		check_admin_referer( 'snpe-options-save' );
+
+		$user = wp_get_current_user();
+		if ( ! $this->option_save( $user->ID ) ) {
+			wp_send_json_error();
+		}
+
+		$data = isset( $_POST['snpe_send'] ) ? true : false;
+		wp_send_json_success( $data );
 	}
 
 	/**
