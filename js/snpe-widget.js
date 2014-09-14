@@ -10,7 +10,7 @@
 		$.ajax({
 			type: 'POST',
 			dataType: 'json',
-			url: ajaxurl,
+			url: snpe_vars.ajaxurl,
 			data: $('.snpe-options').serialize(),
 			success: function(r) {
 				if ( true === r.success ) {

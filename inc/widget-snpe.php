@@ -16,6 +16,8 @@ class SNPE_Widget extends WP_Widget {
 
 		wp_enqueue_script( 'snpe-widget', plugins_url( 'js/snpe-widget.js', dirname( __FILE__ ) ), array( 'jquery' ), '0.1', true );
 
+		wp_localize_script( 'snpe-widget', 'snpe_vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php', 'relative' ) ) );
+
 		$user = wp_get_current_user();
 
 		$title = empty( $instance['title'] ) ? 'New Post Emails' : $instance['title'];
