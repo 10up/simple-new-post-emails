@@ -1,9 +1,10 @@
 (function($){
-	$('#snpe_send').on('change', function(e){
+	var snpe_send = function(e){
 		var $this = $(this),
 			checked = ! $this.prop('checked'), // store the previous state
 			spinner = $(this).siblings('.spinner');
 
+		$this.off('change');
 		$this.hide();
 		spinner.css( 'display', 'inline-block' );
 
@@ -21,7 +22,10 @@
 
 				spinner.hide();
 				$this.show();
+				$this.on('change', snpe_send);
 			}
-		})
-	})
+		});
+	};
+
+	$('#snpe_send').on('change', snpe_send);
 })(jQuery);
