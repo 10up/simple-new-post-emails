@@ -140,11 +140,13 @@ class Simple_New_Post_Emails {
 			$headers[] = 'Bcc: ' . $user->user_email;
 		}
 
+		$to = get_option( 'admin_email' );
+
 		// Plain text email, so strip those tags.
 		$subject = wp_strip_all_tags( $subject );
 		$message = wp_strip_all_tags( $message );
 
-		return wp_mail( 'noreply@10up.com', $subject, $message, $headers );
+		return wp_mail( $to, $subject, $message, $headers );
 	}
 }
 
