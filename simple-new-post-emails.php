@@ -115,8 +115,15 @@ class Simple_New_Post_Emails {
 
 		$sent = false;
 
-		$subject = $post->post_title;
-		$message = $post->post_content;
+		$subject = '[' . get_bloginfo( 'name' ) . '] ' . $post->post_title;
+
+		$message = get_the_author_meta( 'display_name', $post->post_author ) . ' just posted "' . $post->post_title . "\"\n\n";
+		$message .= $post->post_content;
+		$message .= "\n\nView the post and comments at " . get_permalink( $post_id );
+
+		// Plain text email right now, so strip those tags.
+		$subject = wp_strip_all_tags( $subject );
+		$message = wp_strip_all_tags( strip_shortcodes( $message ) );
 
 		// Get the users who want emails
 		$users = get_users( array( 'meta_key' => 'snpe_send', 'meta_value' => 'Y' ) );
@@ -141,10 +148,6 @@ class Simple_New_Post_Emails {
 		}
 
 		$to = get_option( 'admin_email' );
-
-		// Plain text email, so strip those tags.
-		$subject = wp_strip_all_tags( $subject );
-		$message = wp_strip_all_tags( $message );
 
 		return wp_mail( $to, $subject, $message, $headers );
 	}
