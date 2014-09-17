@@ -151,7 +151,7 @@ class Simple_New_Post_Emails {
 			$headers[] = 'Bcc: ' . $user->user_email;
 		}
 
-		$headers .= "Content-Type: text/html; charset=utf-8\r\n";
+		$headers[] = "Content-Type: text/html; charset=utf-8\r\n";
 		$headers = apply_filters( 'snpe_headers', $headers, $post, $users );
 
 		$to = get_option( 'admin_email' );
