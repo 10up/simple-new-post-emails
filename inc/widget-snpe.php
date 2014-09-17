@@ -30,7 +30,7 @@ class SNPE_Widget extends WP_Widget {
 		<label for="snpe_send">
 			<input name="snpe_send" type="checkbox" id="snpe_send" value="Y"<?php checked( $user->snpe_send, 'Y' ); ?> />
 			<span class="spinner" style="display:none;width:20px;height:20px;background:url(<?php echo includes_url( '/images/spinner-2x.gif' ); ?>) no-repeat center;background-size:20px 20px">&nbsp;</span>
-			Get an email when a new post is published
+			Email me when a new post is published
 		</label>
 	</p>
 

@@ -61,7 +61,7 @@ class Simple_New_Post_Emails {
 	<td>
 		<label for="snpe_send">
 			<input name="snpe_send" type="checkbox" id="snpe_send" value="Y"<?php checked( $user->snpe_send, 'Y' ); ?> />
-			Get an email when a new post is published
+			Email me when a new post is published
 		</label>
 	</td>
 </tr>
