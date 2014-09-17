@@ -115,15 +115,15 @@ class Simple_New_Post_Emails {
 
 		$sent = false;
 
+		// Note: we do not escape anything in the subject line, allowing PHPMailer to handle.
 		$subject = '[' . get_bloginfo( 'name' ) . '] ' . $post->post_title;
 
-		$message = get_the_author_meta( 'display_name', $post->post_author ) . ' just posted "' . $post->post_title . "\"\n\n";
-		$message .= $post->post_content;
-		$message .= "\n\nView the post and comments at " . get_permalink( $post_id );
-
-		// Plain text email right now, so strip those tags.
-		$subject = wp_strip_all_tags( $subject );
-		$message = wp_strip_all_tags( strip_shortcodes( $message ) );
+		$message = '<html><body>';
+		$message .= '<h3><a href="' . get_permalink( $post_id ) . '">' . $post->post_title . '</a></h3>';
+		$message .= wpautop( wptexturize( wp_kses_post( strip_shortcodes( $post->post_content ) ) ) );
+		$message .= '<hr /><p>Posted by <a href="' . get_author_posts_url( $post->post_author ) . '">' . get_the_author_meta( 'display_name', $post->post_author ) . '</a>.</p>';
+		$message .= '<p>View the post and comments at <a href="' . get_permalink( $post_id ) . '">' . get_permalink( $post_id ) . '</a>.</p>';
+		$message .= '</body></html>';
 
 		// Get the users who want emails
 		$users = get_users( array( 'meta_key' => 'snpe_send', 'meta_value' => 'Y' ) );
@@ -151,10 +151,11 @@ class Simple_New_Post_Emails {
 			$headers[] = 'Bcc: ' . $user->user_email;
 		}
 
-		$to = get_option( 'admin_email' );
-
-		$to = apply_filters( 'snpe_to_email', $to, $post );
+		$headers .= "Content-Type: text/html; charset=utf-8\r\n";
 		$headers = apply_filters( 'snpe_headers', $headers, $post, $users );
+
+		$to = get_option( 'admin_email' );
+		$to = apply_filters( 'snpe_to_email', $to, $post );
 
 		return wp_mail( $to, $subject, $message, $headers );
 	}
