@@ -128,18 +128,22 @@ class Simple_New_Post_Emails {
 		// Get the users who want emails
 		$users = get_users( array( 'meta_key' => 'snpe_send', 'meta_value' => 'Y' ) );
 
+		$subject = apply_filters( 'snpe_subject', $subject, $post );
+		$message = apply_filters( 'snpe_message', $message, $post );
+		$users = apply_filters( 'snpe_users', $users, $post );
+
 		if ( empty( $users ) ) {
 			return;
 		}
 
-		$sent = $this->send_mail( $users, $subject, $message );
+		$sent = $this->send_mail( $users, $subject, $message, $post );
 
 		if ( $sent ) {
 			update_post_meta( $post_id, 'snpe_sent', 'Y' );
 		}
 	}
 
-	private function send_mail( $users, $subject, $message ) {
+	private function send_mail( $users, $subject, $message, $post ) {
 		// BCC all users specified
 		$headers = array();
 
@@ -148,6 +152,9 @@ class Simple_New_Post_Emails {
 		}
 
 		$to = get_option( 'admin_email' );
+
+		$to = apply_filters( 'snpe_to_email', $to, $post );
+		$headers = apply_filters( 'snpe_headers', $headers, $post, $users );
 
 		return wp_mail( $to, $subject, $message, $headers );
 	}
