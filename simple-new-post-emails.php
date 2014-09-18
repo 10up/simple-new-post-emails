@@ -126,7 +126,7 @@ class Simple_New_Post_Emails {
 		$message .= '</body></html>';
 
 		// Get the users who want emails
-		$users = get_users( array( 'meta_key' => 'snpe_send', 'meta_value' => 'Y' ) );
+		$users = get_users( array( 'meta_key' => 'snpe_send' ) );
 
 		$subject = apply_filters( 'snpe_subject', $subject, $post );
 		$message = apply_filters( 'snpe_message', $message, $post );
