@@ -154,8 +154,7 @@ class Simple_New_Post_Emails {
 		$headers[] = "Content-Type: text/html; charset=utf-8\r\n";
 		$headers = apply_filters( 'snpe_headers', $headers, $post, $users );
 
-		$to = get_option( 'admin_email' );
-		$to = apply_filters( 'snpe_to_email', $to, $post );
+		$to = apply_filters( 'snpe_to_email', '', $post );
 
 		return wp_mail( $to, $subject, $message, $headers );
 	}
