@@ -4,7 +4,7 @@
  Plugin URI: https://github.com/10up/simple-new-post-emails
  Description: Allow site members to check a box and get new posts via email. Includes a widget.
  Author: 10up
- Version: 0.1
+ Version: 0.5
  Author URI: http://10up.com
  */
 
