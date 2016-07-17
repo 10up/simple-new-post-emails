@@ -81,9 +81,9 @@ class Simple_New_Post_Emails {
 		}
 
 		if ( isset( $_POST['snpe_send'] ) && 'Y' === $_POST['snpe_send'] ) {
-			return update_usermeta( $user_id, 'snpe_send', 'Y' );
+			return update_user_meta( $user_id, 'snpe_send', 'Y' );
 		} else {
-			return delete_usermeta( $user_id, 'snpe_send' );
+			return delete_user_meta( $user_id, 'snpe_send' );
 		}
 	}
 
