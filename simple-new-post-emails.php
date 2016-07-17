@@ -39,6 +39,8 @@ class Simple_New_Post_Emails {
 		add_action( 'personal_options_update', array( $this, 'option_save' ) );
 		add_action( 'wp_ajax_snpe-options-save', array( $this, 'ajax_option_save' ) );
 		add_action( 'publish_post', array( $this, 'publish_post' ), 10, 2 );
+		add_filter( 'manage_users_columns', array( $this, 'add_snpe_user_column') );
+		add_action( 'manage_users_custom_column', array( $this, 'show_snpe_user_column_content'), 10, 3 );
 	}
 
 	/**
@@ -157,6 +159,33 @@ class Simple_New_Post_Emails {
 		$to = apply_filters( 'snpe_to_email', '', $post );
 
 		return wp_mail( $to, $subject, $message, $headers );
+	}
+
+	/**
+	 * Add a column to the Users admin table indicating subscription status
+	 * @param array $columns    User table columns
+	 *
+	 * @return array
+	 */
+	public function add_snpe_user_column( $columns ) {
+		$columns['snpe_send'] = 'Email New Posts?';
+		return $columns;
+	}
+
+	/**
+	 * Return a user-friendly string based on the value of the user meta field
+	 * @param string $value Passed column value
+	 * @param string    $column_name    Passed column name
+	 * @param int   $user_id    User ID
+	 *
+	 * @return string
+	 */
+	public function show_snpe_user_column_content( $value, $column_name, $user_id ) {
+		$snpe_send = get_user_meta( $user_id, 'snpe_send', true );
+		if ( 'snpe_send' == $column_name ) {
+			return ( true == $snpe_send ) ? 'Yes' : 'No';
+		}
+		return $value;
 	}
 }
 
