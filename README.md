@@ -1,7 +1,7 @@
 # Simple New Post Emails #
 Contributors: 10up, helen, chrishardie  
 Requires at least: 3.0  
-Tested up to: 4.9
+Tested up to: 5.0
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 Stable tag: trunk  
@@ -32,6 +32,10 @@ The premise of this plugin is to keep things as simple as possible, particularly
 2. Widget in Twenty Eleven
 
 ## Changelog ##
+
+### 0.7 ###
+
+* Fix: mail delivery was failing silently in default configuration
 
 ### 0.6 ###
 * Add a column to the users admin list (props @chrishardie)
