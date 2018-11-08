@@ -156,7 +156,14 @@ class Simple_New_Post_Emails {
 		$headers[] = "Content-Type: text/html; charset=utf-8\r\n";
 		$headers = apply_filters( 'snpe_headers', $headers, $post, $users );
 
-		$to = apply_filters( 'snpe_to_email', '', $post );
+		// Get the site domain and get rid of www.
+		// Borrowed from wp-includes/pluggable.php
+		$sitename = strtolower( $_SERVER['SERVER_NAME'] );
+		if ( substr( $sitename, 0, 4 ) == 'www.' ) {
+			$sitename = substr( $sitename, 4 );
+		}
+
+		$to = apply_filters( 'snpe_to_email', 'wordpress@' . $sitename, $post );
 
 		return wp_mail( $to, $subject, $message, $headers );
 	}
