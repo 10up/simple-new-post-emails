@@ -11,9 +11,13 @@ Requires at least: 3.0
 
 Allow site members to check a box and get new posts via email. The checkbox appears on the user's profile, as well as an optional widget for your site. Works especially well for intranet sites.
 
-### Contributing
+### User profile option
 
-Pull requests and issues on [GitHub](https://github.com/10up/simple-new-post-emails) welcome.
+![User profile option](assets/screenshot-1.png)
+
+### Widget in Twenty Eleven
+
+![Widget in Twenty Eleven](assets/screenshot-2.png)
 
 ## Installation
 
@@ -29,20 +33,6 @@ The premise of this plugin is to keep things as simple as possible, particularly
 
 **Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress.  Bug reports, feature requests, questions, and pull requests are welcome.
 
-## Screenshots
+## Contributing
 
-1. User profile option
-2. Widget in Twenty Eleven
-
-## Changelog ##
-
-### 0.7 ###
-
-* Fix: mail delivery was failing silently in default configuration
-
-### 0.6 ###
-* Add a column to the users admin list (props @chrishardie)
-* Update deprecated function calls (props @chrishardie)
-
-### 0.5 ###
-* Initial release
+Pull requests and issues on [GitHub](https://github.com/10up/simple-new-post-emails) welcome.
