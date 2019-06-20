@@ -4,9 +4,6 @@
 
 [![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/10up/simple-new-post-emails.svg?label=release)](https://github.com/10up/simple-new-post-emails/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/simple-new-post-emails.svg)](https://github.com/10up/simple-new-post-emails/blob/develop/LICENSE.md)
 
-Contributors: 10up, helen, chrishardie  
-Requires at least: 3.0
-
 ## Description
 
 Allow site members to check a box and get new posts via email. The checkbox appears on the user's profile, as well as an optional widget for your site. Works especially well for intranet sites.
@@ -18,6 +15,10 @@ Allow site members to check a box and get new posts via email. The checkbox appe
 ### Widget in Twenty Eleven
 
 ![Widget in Twenty Eleven](assets/screenshot-2.png)
+
+## Requirements
+
+* [WordPress](http://wordpress.org) 3.0+
 
 ## Installation
 
