@@ -2,7 +2,7 @@
 
 > Allow site members to check a box and get new posts via email. Includes a widget.
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/10up/simple-new-post-emails.svg?label=release)](https://github.com/10up/simple-new-post-emails/releases/latest)
 
 Contributors: 10up, helen, chrishardie  
 Requires at least: 3.0  
