@@ -2,13 +2,10 @@
 
 > Allow site members to check a box and get new posts via email. Includes a widget.
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/10up/simple-new-post-emails.svg?label=release)](https://github.com/10up/simple-new-post-emails/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/10up/simple-new-post-emails.svg?label=release)](https://github.com/10up/simple-new-post-emails/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/simple-new-post-emails.svg)](https://github.com/10up/simple-new-post-emails/blob/develop/LICENSE.md)
 
 Contributors: 10up, helen, chrishardie  
-Requires at least: 3.0  
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
-Stable tag: trunk  
+Requires at least: 3.0
 
 ## Description
 
