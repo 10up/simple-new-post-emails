@@ -1,10 +1,10 @@
 === Simple New Post Emails ===
-Contributors: 10up, helen, chrishardie  
-Requires at least: 3.0  
-Tested up to: 5.3
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
-Stable tag: trunk  
+Contributors: 10up, helen, chrishardie
+Requires at least: 3.0
+Tested up to: 5.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: trunk
 
 Allow site members to check a box and get new posts via email. Includes a widget.
 
