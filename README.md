@@ -10,11 +10,11 @@ Allow site members to check a box and get new posts via email. The checkbox appe
 
 ### User profile option
 
-![User profile option](assets/screenshot-1.png)
+![User profile option](.wordpress-org/screenshot-1.png)
 
 ### Widget in Twenty Eleven
 
-![Widget in Twenty Eleven](assets/screenshot-2.png)
+![Widget in Twenty Eleven](.wordpress-org/screenshot-2.png)
 
 ## Requirements
 
