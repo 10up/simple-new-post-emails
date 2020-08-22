@@ -1,6 +1,7 @@
 # Directories
 /.git export-ignore
 /.github export-ignore
+/.wordpress-org export-ignore
 
 # Files
 /.gitattributes export-ignore
