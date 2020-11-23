@@ -1,10 +1,12 @@
 === Simple New Post Emails ===
 Contributors: 10up, helen, chrishardie
+Tags: email, post emails, intranet
 Requires at least: 3.0
 Tested up to: 5.5
+Requires PHP:
+Stable tag: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: trunk
 
 Allow site members to check a box and get new posts via email. Includes a widget.
 
