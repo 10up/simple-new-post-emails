@@ -34,6 +34,14 @@ The premise of this plugin is to keep things as simple as possible, particularly
 
 **Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress.  Bug reports, feature requests, questions, and pull requests are welcome.
 
+## Changelog
+
+A complete listing of all notable changes to Simple New Post Emails are documented in [CHANGELOG.md](https://github.com/10up/simple-new-post-emails/blob/develop/CHANGELOG.md).
+
 ## Contributing
 
-Pull requests and issues on [GitHub](https://github.com/10up/simple-new-post-emails) welcome.
+Please read [CODE_OF_CONDUCT.md](https://github.com/10up/simple-new-post-emails/blob/develop/CODE_OF_CONDUCT.md) for details on our code of conduct, [CONTRIBUTING.md](https://github.com/10up/simple-new-post-emails/blob/develop/CONTRIBUTING.md) for details on the process for submitting pull requests to us, and [CREDITS.md](https://github.com/10up/simple-new-post-emails/blob/develop/CREDITS.md) for a listing of maintainers of, contributors to, and libraries used by Simple New Post Emails.
+
+## Like what you see?
+
+<a href="http://10up.com/contact/"><img src="https://10up.com/uploads/2016/10/10up-Github-Banner.png" width="850" alt="Work with us at 10up"></a>

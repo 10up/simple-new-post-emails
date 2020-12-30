@@ -1,11 +1,15 @@
 <?php
-/*
- Plugin Name: Simple New Post Emails
- Plugin URI: https://github.com/10up/simple-new-post-emails
- Description: Allow site members to check a box and get new posts via email. Includes a widget.
- Author: 10up
- Version: 0.7
- Author URI: http://10up.com
+/**
+ * Plugin Name:       Simple New Post Emails
+ * Plugin URI:        https://github.com/10up/simple-new-post-emails
+ * Description:       Allow site members to check a box and get new posts via email. Includes a widget.
+ * Version:           0.7
+ * Requires at least: 3.0
+ * Requires PHP:
+ * Author:            10up
+ * Author URI:        https://10up.com
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /*
