@@ -2,7 +2,7 @@
 Contributors: 10up, helen, chrishardie
 Tags: email, post emails, intranet
 Requires at least: 3.0
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP:
 Stable tag: 0.7
 License: GPLv2 or later
