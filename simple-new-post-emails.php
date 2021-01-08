@@ -3,7 +3,7 @@
  * Plugin Name:       Simple New Post Emails
  * Plugin URI:        https://github.com/10up/simple-new-post-emails
  * Description:       Allow site members to check a box and get new posts via email. Includes a widget.
- * Version:           0.7
+ * Version:           0.7.1
  * Requires at least: 3.0
  * Requires PHP:
  * Author:            10up
