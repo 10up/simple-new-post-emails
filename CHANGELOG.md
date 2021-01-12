@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
-## [0.7.1] - 2020-01-08
+## [0.7.1] - 2020-01-12
 ## Added
 - Plugin banner and icon (props [@lea10up](https://github.com/lea10up) via [#17](https://github.com/10up/simple-new-post-emails/pull/17)).
 - GitHub Actions for WordPress.org plugin deploy and readme/asset update (props [@jeffpaul](https://github.com/jeffpaul), [@ChrisHardie](https://github.com/ChrisHardie) via [#18](https://github.com/10up/simple-new-post-emails/pull/18), [#20](https://github.com/10up/simple-new-post-emails/pull/20), [#25](https://github.com/10up/simple-new-post-emails/pull/25), [#34](https://github.com/10up/simple-new-post-emails/pull/34)).
