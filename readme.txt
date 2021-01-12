@@ -4,7 +4,7 @@ Tags: email, post emails, intranet
 Requires at least: 3.0
 Tested up to: 5.6
 Requires PHP:
-Stable tag: 0.7
+Stable tag: 0.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,12 @@ The premise of this plugin is to keep things as simple as possible, particularly
 2. Widget in Twenty Eleven
 
 == Changelog ==
+
+= 0.7.1 =
+* **Added:** Plugin banner and icon (props [@lea10up](https://profiles.wordpress.org/lea10up/)).
+* **Added:** GitHub Actions for WordPress.org plugin deploy and readme/asset update (props [@jeffpaul](https://profiles.wordpress.org/jeffpaul/), [@ChrisHardie](https://profiles.wordpress.org/chrishardie/)).
+* **Changed:** Bump WordPress version "tested up to" 5.6 (props [@ChrisHardie](https://profiles.wordpress.org/chrishardie/)).
+* **Changed:** Documentation updates (props [@jeffpaul](https://profiles.wordpress.org/jeffpaul/)).
 
 = 0.7 =
 * Fix: mail delivery was failing silently in default configuration
