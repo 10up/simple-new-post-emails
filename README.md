@@ -2,7 +2,7 @@
 
 > Allow site members to check a box and get new posts via email. Includes a widget.
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/10up/simple-new-post-emails.svg?label=release)](https://github.com/10up/simple-new-post-emails/releases/latest) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/simple-new-post-emails) [![GPLv2 License](https://img.shields.io/github/license/10up/simple-new-post-emails.svg)](https://github.com/10up/simple-new-post-emails/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-archived-red.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/10up/simple-new-post-emails.svg?label=release)](https://github.com/10up/simple-new-post-emails/releases/latest) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/simple-new-post-emails) [![GPLv2 License](https://img.shields.io/github/license/10up/simple-new-post-emails.svg)](https://github.com/10up/simple-new-post-emails/blob/develop/LICENSE.md)
 
 ## Description
 
@@ -32,7 +32,7 @@ The premise of this plugin is to keep things as simple as possible, particularly
 
 ## Support Level
 
-**Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress.  Bug reports, feature requests, questions, and pull requests are welcome.
+**Archived:** This project is no longer maintained by 10up. We are no longer responding to Issues or Pull Requests unless they relate to security concerns. We encourage interested developers to fork this project and make it their own!
 
 ## Changelog
 
